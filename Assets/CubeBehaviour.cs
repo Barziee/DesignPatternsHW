@@ -33,7 +33,7 @@ public class CubeBehaviour : MonoBehaviour
         while (!cubeSpawned)
         {
             Vector3 cubePos = new Vector3(Random.Range(-4.5f, 4.5f), 1f, Random.Range(-4.5f, 4.5f));
-            if ((cubePos - transform.position).magnitude < 3)
+            if ((cubePos - transform.position).magnitude < 2)
             {
                 continue;
             }

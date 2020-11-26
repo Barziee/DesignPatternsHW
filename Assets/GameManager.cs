@@ -30,9 +30,7 @@ public class GameManager : MonoBehaviour
     public void Test()
     {
         Debug.Log("TESTING");
-    }
-
-    
+    } 
     public IEnumerator Timer()
     {
         //Start game ? init/reset
