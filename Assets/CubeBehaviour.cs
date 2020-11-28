@@ -6,6 +6,7 @@ public class CubeBehaviour : MonoBehaviour
     public GameObject cube;
     public Rigidbody rb;
     public BoxCollider bc;
+    public int difficulty = 2;
 
     void Update()
     {
@@ -18,9 +19,9 @@ public class CubeBehaviour : MonoBehaviour
                 bc = hit.collider as BoxCollider;
                 if (bc != null)
                 {
-                    Debug.Log("HIT");
+                    Debug.Log("CUBE HIT");
                     CubeSpawner();
-                    GameManager.Instance.IncreaseScore();
+                    GameManager.Instance.ScoreCounter();
                     Destroy(bc.gameObject);
                 }
             }
@@ -33,7 +34,7 @@ public class CubeBehaviour : MonoBehaviour
         while (!cubeSpawned)
         {
             Vector3 cubePos = new Vector3(Random.Range(-4.5f, 4.5f), 1f, Random.Range(-4.5f, 4.5f));
-            if ((cubePos - transform.position).magnitude < 2)
+            if ((cubePos - transform.position).magnitude < difficulty)
             {
                 continue;
             }
